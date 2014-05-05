@@ -1,0 +1,26 @@
+\ProvidesPackage{../dotfiles-etc/mystyle-letter}
+%\usepackage[pdftex]{graphicx}
+	%several packages
+%	\graphicspath{{img/}}
+\usepackage[utf8]{inputenc}
+\usepackage[table,pdftex,hyperref,fixpdftex,dvipsnames]{xcolor}
+\usepackage{pdflscape}
+	%Package pdﬂscape adds PDF support to the environment landscape of package lscape by setting the PDF page attribute /Rotate.
+\usepackage[ngerman]{babel}
+	%language support, first language can also be called
+\usepackage{multirow}
+	%well, multirows
+\usepackage{tabu}
+	%supposedly replaces \usepackage{tabularx},\usepackage{longtable}
+\usepackage{booktabs}
+	%for much better looking tables
+\usepackage[pdfusetitle]{hyperref} %should be loaded last so as to overwrite other packages
+	\hypersetup{
+		colorlinks=true, %make this false for b/w
+		linkcolor=ForestGreen,
+		citecolor=blue,
+		filecolor=ForestGreen,
+		urlcolor=ForestGreen,
+	}
+\pdfoptionpdfminorversion 6
+	%some stupid thing because otherwise, latex creates a warning about too new included pdfs created by keynote.
