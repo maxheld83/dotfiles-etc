@@ -18,13 +18,15 @@
 \usepackage{pdflscape}
 	%Package pdﬂscape adds PDF support to the environment landscape of package lscape by setting the PDF page attribute /Rotate.
 \usepackage{dialogue}
-\usepackage[ngerman,american]{babel}
+\usepackage[french,ngerman,american]{babel}
 	%language support, first language can also be called
 \usepackage[utf8]{inputenc}
-\usepackage[comma,sort]{natbib}
-	% better references
-	\bibpunct[:~]{(}{)}{;}{a}{}{,} %http://merkel.zoneo.net/Latex/natbib.php
 \usepackage[gen]{eurosym}%official euro symbol
+\usepackage{biblatex}
+\usepackage{csquotes}
+	%via biblatex: If this package is available, Biblatex will use its language sensitive quotation facilities to enclose certain titles in quotation marks. If not, Biblatex uses quotes suitable for American English as a fallback. When writing in any other language, loading csquotes is strongly recommended.
+\usepackage{xpatch}
+	%The xpatch package extends the patching commands of etoolbox to Biblatex biblio- graphy macros, drivers and formatting directives.
 \usepackage{multirow}
 	%well, multirows
 \usepackage{tabu}
