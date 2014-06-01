@@ -1,4 +1,4 @@
-\ProvidesPackage{./mystyles/article}
+\ProvidesPackage{./latexstyles/default}
 \usepackage[pdftex]{graphicx}
 	%several packages
 	%\graphicspath{{"../../Google Drive/production/"} {"../../Dropbox/Public/images/"}}
@@ -23,6 +23,11 @@
 \usepackage[utf8]{inputenc}
 \usepackage[gen]{eurosym}%official euro symbol
 \usepackage[natbib]{biblatex}
+\usepackage{lineo}
+	%for line numbering
+\usepackage{epigraph}
+	\setlength{\epigraphwidth}{0.75\textwidth}
+	%for nice-looking epigraphs, e.g. at the beginning of chapters etc.
 \usepackage{csquotes}
 	%via biblatex: If this package is available, Biblatex will use its language sensitive quotation facilities to enclose certain titles in quotation marks. If not, Biblatex uses quotes suitable for American English as a fallback. When writing in any other language, loading csquotes is strongly recommended.
 \usepackage{xpatch}
@@ -51,4 +56,3 @@
 	%other options: xindy, toc, nonumberlist
 \pdfoptionpdfminorversion 6
 	%some stupid thing because otherwise, latex creates a warning about too new included pdfs created by keynote.
-	\makeglossaries
