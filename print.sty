@@ -1,8 +1,6 @@
 \ProvidesPackage{./latexstyles/default}
 \usepackage[pdftex]{graphicx}
 	%several packages
-	%\graphicspath{{"../../Google Drive/production/"} {"../../Dropbox/Public/images/"}}
-		%that doesn't work for all!
 %Math stuff
 	\usepackage{amsthm}
 		%for theorems
@@ -44,13 +42,13 @@
 	\setcounter{secnumdepth}{3}
 	\setcounter{tocdepth}{1}
 \usepackage[pdfusetitle]{hyperref} %should be loaded last so as to overwrite other packages
-	\hypersetup{
-		colorlinks=true, %make this false for b/w
-		linkcolor=ForestGreen,
-		citecolor=blue,
-		filecolor=ForestGreen,
-		urlcolor=ForestGreen,
-	}
+%	\hypersetup{
+%		colorlinks=true, %make this false for b/w
+%		linkcolor=ForestGreen,
+%		citecolor=blue,
+%		filecolor=ForestGreen,
+%		urlcolor=ForestGreen,
+%	}
 	\usepackage[all]{hypcap} %to make sure that refs hyperlink to the beginning, not end of floats}
 \usepackage[acronym,xindy,toc]{glossaries}
 	%other options: xindy, toc, nonumberlist
