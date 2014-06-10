@@ -31,11 +31,16 @@
 \usepackage[gen]{eurosym}%official euro symbol
 \usepackage
 	[
-		bibstyle=authoryear,
+		style=authoryear-comp,
 		backend=biber,
-		citestyle=authoryear-icomp
+		maxbibnames=99,
+		%citestyle=authoryear-icomp
 	]
 	{biblatex}
+	\DeclareNameAlias{sortname}{last-first}
+		%makes Lastname, Firstname in the bibliography
+	\renewcommand{\labelnamepunct}{\addcolon\space}
+		%includes colon after year in bibliograpy
 \usepackage{epigraph}
 	\setlength{\epigraphwidth}{0.75\textwidth}
 	%for nice-looking epigraphs, e.g. at the beginning of chapters etc.
