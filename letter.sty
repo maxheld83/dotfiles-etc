@@ -1,0 +1,25 @@
+\ProvidesPackage{./latexstyles/letter}
+\usepackage[pdftex]{graphicx}
+	%several packages
+\usepackage{soul}
+	%for strikethrough and other typographic niceties
+\usepackage{babel}
+	%language support, first language can also be called
+	%languages are now declared as article options
+\usepackage[utf8]{inputenc}
+\usepackage[gen]{eurosym}%official euro symbol
+\usepackage{epigraph}
+	\setlength{\epigraphwidth}{0.75\textwidth}
+	%for nice-looking epigraphs, e.g. at the beginning of chapters etc.
+\usepackage{paralist}
+	%very flexible & customisable lists (eg. enumerate/itemize, etc.), including inparaenum
+\usepackage[pdfusetitle]{hyperref} %should be loaded last so as to overwrite other packages
+%	\hypersetup{
+%		colorlinks=true, %make this false for b/w
+%		linkcolor=ForestGreen,
+%		citecolor=blue,
+%		filecolor=ForestGreen,
+%		urlcolor=ForestGreen,
+%	}
+\pdfoptionpdfminorversion 6
+	%some stupid thing because otherwise, latex creates a warning about too new included pdfs created by keynote.
