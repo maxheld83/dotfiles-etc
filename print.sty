@@ -1,4 +1,4 @@
-\ProvidesPackage{./latexstyles/print}
+\ProvidesPackage{latexstyles/print}
 \usepackage[pdftex]{graphicx}
 	%several packages
 %Math stuff
@@ -34,6 +34,7 @@
 		style=authoryear-comp,
 		backend=biber,
 		maxbibnames=99,
+		natbib=true, % this allows usage of old \citet etc commands
 		%citestyle=authoryear-icomp
 	]
 	{biblatex}
