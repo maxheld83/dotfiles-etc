@@ -35,8 +35,12 @@
 % Misc ===============
 \usepackage{silence}  % kill meaningless warnings
 \WarningFilter{biblatex}{Patching footnotes failed}  % Beamer creates this stupid error
+\WarningFilter{latexfont}{Font shape}  % unnecessary warnings, it's just that mtheme calls capitals on a mono font, which does nit exist
+\WarningFilter{latexfont}{Some font}
 \usepackage{booktabs}  % necessary for mtheme
 \usepackage[scale=2]{ccicons}  % necessary for mtheme
+\usepackage{listings}
+\usepackage{pmboxdraw} % required for directory symbols http://tex.stackexchange.com/questions/87082/utf8-characters#sthash.bDb3Wztd.dpuf
 
 % Graphics ======
 \usepackage{graphicx}
@@ -45,9 +49,10 @@
 \usepackage{pgfplots}  % necessary for mtheme
 \usepgfplotslibrary{dateplot}  % necessary for mtheme
 \usepackage{xcolor}
+\usepackage{pgfpages}  % necessary for split-screen pres http://golatex.de/show-notes-on-second-screen-funktioniert-nicht-t9341.html
 
 % Theme and colors ========
-\usetheme[progressbar=none, sectionpage=none, numbering=fraction]{m}
+\usetheme[progressbar=none, sectionpage=progressbar, numbering=fraction]{m}
 
 % same as minimal mistakes, from https://github.com/mmistakes/minimal-mistakes/blob/master/_sass/variables.scss
 \definecolor{success-green}{HTML}{5cb85c}
@@ -60,3 +65,4 @@
 \definecolor{mLightBrown}{HTML}{C64537}  % alert color from mmistakes DANGER-RED
 \definecolor{mLightGreen}{HTML}{5cb85c}  % example color from mmistakes  SUCCESS-GREEN
 \setbeamercolor{progress bar}{fg = black, bg = white}
+\setbeamercolor{normal text}{fg = black, bg = white}
