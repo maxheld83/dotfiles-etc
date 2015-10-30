@@ -1,0 +1,111 @@
+\ProvidesPackage{style}
+
+
+% Internationalization ================================
+\usepackage[utf8]{inputenc}  % this sets the INPUT font encoding
+\usepackage[T1]{fontenc}  % this sets the OUTPUT font encoding
+\usepackage{babel} % language support, first language can also be called
+\usepackage{csquotes} % babel needs this
+	%via biblatex: If this package is available, Biblatex will use its language sensitive quotation facilities to enclose certain titles in quotation marks. If not, Biblatex uses quotes suitable for American English as a fallback. When writing in any other language, loading csquotes is strongly recommended.
+\usepackage[gen]{eurosym}%official euro symbol
+
+
+% Citation =================================
+\usepackage
+	[
+	  style=authoryear-comp,
+	  backend=biber,
+		maxbibnames=99,
+		citestyle=authoryear-icomp
+	]
+	{biblatex}
+  \DeclareNameAlias{sortname}{last-first}
+		%makes Lastname, Firstname in the bibliography
+	\renewcommand{\labelnamepunct}{\addcolon\space}
+		%includes colon after year in bibliograpy
+	\renewcommand*{\multinamedelim}{;\space}
+		%changes name delimiter in citations and bibliography to semicolon
+\usepackage{xpatch}
+	%The xpatch package extends the patching commands of etoolbox to Biblatex biblio- graphy macros, drivers and formatting directives.
+
+
+% Math stuff ===============================
+\usepackage{amsmath} % for AMS math stuff
+\usepackage{amsfonts}
+\usepackage{amsthm} % for theorems
+	\theoremstyle{plain}
+	\newtheorem{desideratum}{Desideratum}
+\usepackage{amssymb} % math and other symbols
+
+
+% Graphics ======
+\usepackage{xcolor}
+\usepackage{media9}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{geometry}
+\usetikzlibrary{backgrounds}
+\usepackage{pgfplots}  % necessary for mtheme
+	\pgfplotsset{compat=1.12}  % fixes us to one pgfplots version
+\usepgfplotslibrary{dateplot}  % necessary for mtheme
+\usepackage{pgfpages}  % necessary for split-screen pres http://golatex.de/show-notes-on-second-screen-funktioniert-nicht-t9341.html
+
+
+% Custom colors ===================
+% same as minimal mistakes, from https://github.com/mmistakes/minimal-mistakes/blob/master/_sass/variables.scss
+\definecolor{success-green}{HTML}{5cb85c}
+\definecolor{warning-orange}{HTML}{dd8338}
+\definecolor{danger-red}{HTML}{C64537}
+\definecolor{info-blue}{HTML}{308cbc}
+
+
+% Tables =================
+\usepackage{booktabs}  % necessary for mtheme
+\usepackage{multirow}  % well, multirows
+\usepackage{tabu}  % supposedly replaces \usepackage{tabularx},\usepackage{longtable}
+
+
+% Extra Typographic Environments ============
+\usepackage{dialogue}
+\usepackage{epigraph}  % for nice-looking epigraphs, e.g. at the beginning of chapters etc.
+	\setlength{\epigraphwidth}{0.75\textwidth}
+\usepackage{authblk}  % support footnote style author/affiliation
+\usepackage{paralist}  % very flexible & customisable lists (eg. enumerate/itemize, etc.), including inparaenum
+\usepackage{soul}  % for strikethrough and other typographic niceties
+
+
+% Kill spurious warnings =========
+\usepackage{silence}  % kill meaningless warnings
+	\WarningFilter{biblatex}{Patching footnotes failed}  % Beamer creates this stupid error
+	\WarningFilter{latexfont}{Font shape}  % unnecessary warnings, it's just that mtheme calls capitals on a mono font, which does nit exist
+
+
+% Misc ===============
+\usepackage[scale=2]{ccicons}  % necessary for mtheme
+\usepackage[acronym,xindy,toc]{glossaries}  % other options: xindy, toc, nonumberlist
+\usepackage{hyperref}  % hyperlinked entries, should be loaded last so as to overwrite other packages
+\usepackage[all]{hypcap} % to make sure that refs hyperlink to the beginning, not end of floats}
+\pdfoptionpdfminorversion 6
+	%some stupid thing because otherwise, latex creates a warning about too new included pdfs created by keynote.
+\usepackage{lmodern}  % fixes this issue http://tex.stackexchange.com/questions/58087/how-to-remove-the-warnings-font-shape-ot1-cmss-m-n-in-size-4-not-available, above is not necessary if you dont use lmodern
+\usepackage{listings}
+\usepackage{pmboxdraw} % required for directory symbols http://tex.stackexchange.com/questions/87082/utf8-characters#sthash.bDb3Wztd.dpuf
+
+
+% Beamer stuff =================================================
+\@ifclassloaded{beamer}{ % if beamer TRUE
+	\usetheme[progressbar=none, sectionpage=none, numbering=fraction]{m}
+	\definecolor{mDarkBrown}{HTML}{308cbc}  % indicator etc from mmistakes INFO-BLUE
+	\definecolor{mDarkTeal}{HTML}{000000}  % just black background BLACK
+	\definecolor{mLightBrown}{HTML}{C64537}  % alert color from mmistakes DANGER-RED
+	\definecolor{mLightGreen}{HTML}{5cb85c}  % example color from mmistakes  SUCCESS-GREEN
+	% same as minimal mistakes, from https://github.com/mmistakes/minimal-mistakes/blob/master/_sass/variables.scss
+	\definecolor{success-green}{HTML}{5cb85c}
+  \definecolor{warning-orange}{HTML}{dd8338}
+  \definecolor{danger-red}{HTML}{C64537}
+  \definecolor{info-blue}{HTML}{308cbc}
+
+  \setbeamercolor{progress bar}{fg = black, bg = white}
+  \setbeamercolor{normal text}{fg = black, bg = white
+}{ % if beamer FALSE
+}
