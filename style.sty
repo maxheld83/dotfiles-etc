@@ -40,6 +40,7 @@
 
 % Graphics ======
 \usepackage{xcolor}
+\usepackage{media9}
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{geometry}
@@ -47,6 +48,7 @@
 \usepackage{pgfplots}  % necessary for mtheme
 	\pgfplotsset{compat=1.12}  % fixes us to one pgfplots version
 \usepgfplotslibrary{dateplot}  % necessary for mtheme
+\usepackage{pgfpages}  % necessary for split-screen pres http://golatex.de/show-notes-on-second-screen-funktioniert-nicht-t9341.html
 
 
 % Custom colors ===================
@@ -75,6 +77,7 @@
 % Kill spurious warnings =========
 \usepackage{silence}  % kill meaningless warnings
 	\WarningFilter{biblatex}{Patching footnotes failed}  % Beamer creates this stupid error
+	\WarningFilter{latexfont}{Font shape}  % unnecessary warnings, it's just that mtheme calls capitals on a mono font, which does nit exist
 
 
 % Misc ===============
@@ -85,6 +88,8 @@
 \pdfoptionpdfminorversion 6
 	%some stupid thing because otherwise, latex creates a warning about too new included pdfs created by keynote.
 \usepackage{lmodern}  % fixes this issue http://tex.stackexchange.com/questions/58087/how-to-remove-the-warnings-font-shape-ot1-cmss-m-n-in-size-4-not-available, above is not necessary if you dont use lmodern
+\usepackage{listings}
+\usepackage{pmboxdraw} % required for directory symbols http://tex.stackexchange.com/questions/87082/utf8-characters#sthash.bDb3Wztd.dpuf
 
 
 % Beamer stuff =================================================
@@ -94,6 +99,13 @@
 	\definecolor{mDarkTeal}{HTML}{000000}  % just black background BLACK
 	\definecolor{mLightBrown}{HTML}{C64537}  % alert color from mmistakes DANGER-RED
 	\definecolor{mLightGreen}{HTML}{5cb85c}  % example color from mmistakes  SUCCESS-GREEN
-	\setbeamercolor{progress bar}{fg = black, bg = white}
+	% same as minimal mistakes, from https://github.com/mmistakes/minimal-mistakes/blob/master/_sass/variables.scss
+	\definecolor{success-green}{HTML}{5cb85c}
+  \definecolor{warning-orange}{HTML}{dd8338}
+  \definecolor{danger-red}{HTML}{C64537}
+  \definecolor{info-blue}{HTML}{308cbc}
+
+  \setbeamercolor{progress bar}{fg = black, bg = white}
+  \setbeamercolor{normal text}{fg = black, bg = white
 }{ % if beamer FALSE
 }
